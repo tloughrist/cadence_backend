@@ -14,7 +14,7 @@ class TracksController < ApplicationController
     if tracks.length > 0
       render json: tracks, status: :ok
     else
-      render json: { errors: "no matching tracks" }, status: :no_content
+      render status: :no_content
     end
   end
 
