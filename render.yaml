@@ -1,6 +1,6 @@
 databases:
-  - name: cadence
-    databaseName: cadence
+  - name: cadence-db
+    databaseName: cadence-db
     plan: starter
     user: cadence
 
