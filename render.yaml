@@ -1,17 +1,18 @@
 databases:
-  name: cadence
-  ipAllowList: []
+  - name: cadence
+    databaseName: cadence
+    user: cadence
 
 services:
-  type: web
-  name: rails
-  env: ruby
-  buildCommand: "./bin/render-build.sh"
-  startCommand: bundle exec rails s
-  envVars:
-    key: RAILS_MASTER_KEY
-    sync: false
-    key: DATABASE_URL
-    fromDataBase:
-      name: postgre
-      property: connectionString
+  - type: web
+    name: cadence
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: cadence
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
