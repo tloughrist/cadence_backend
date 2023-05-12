@@ -1,5 +1,5 @@
 databases:
-  name: postgres
+  name: cadence
   ipAllowList: []
 
 services:
@@ -15,8 +15,3 @@ services:
     fromDataBase:
       name: postgre
       property: connectionString
-  type: redis
-  name: redis
-  ipAllowList: []
-  plan: free
-  maxmemorPolicy: noeviction
